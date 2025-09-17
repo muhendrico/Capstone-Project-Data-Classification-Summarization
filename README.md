@@ -44,9 +44,14 @@ To accelerate the workflow, **IBM Granite AI** was integrated. With prompt-based
 - WordClouds clearly differentiate the frequent terms used in spam vs ham.  
 - Balancing the dataset improved the model’s ability to detect spam messages.  
 
-images/pie_chart.png
-images/wordcloud_spam_img.png
-images/wordcloud_ham_img.png 
+![Spam vs Ham Distribution](images/pie_chart.png)  
+*Pie chart showing proportion of spam vs ham messages*
+
+![Spam WordCloud](images/wordcloud_spam_img.png)  
+*Most frequent terms in spam messages*
+
+![Ham WordCloud](images/wordcloud_ham_img.png)  
+*Most frequent terms in ham messages*
 
 ---
 
