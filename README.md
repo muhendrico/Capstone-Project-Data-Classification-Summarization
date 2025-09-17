@@ -1,30 +1,82 @@
-# Spam Email Classification with Deep Learning + IBM Granite
+# 📧 Spam Email Classification with Deep Learning + IBM Granite
 
 ## 📌 Overview
-This project focuses on spam email classification using deep learning.  
-The workflow includes data preprocessing, text transformation, and training a classification model.  
-IBM Granite AI was integrated to assist in data exploration, visualization, and class balancing automation.
+This project focuses on **spam email classification** using deep learning.  
+The workflow includes data preprocessing, feature engineering, exploratory data analysis (EDA), and model training.  
+
+To accelerate the workflow, **IBM Granite AI** was integrated. With prompt-based interactions, Granite supports tasks such as data exploration, visualization, and dataset balancing — replacing many manual steps with natural language commands.  
+
+👉 **Run on Google Colab:** [Open Notebook](<https://colab.research.google.com/drive/18mtR3RQPIKi4UpCi5bCmhnZ6c9pzQUiV?usp=sharing>)
+
+---
 
 ## 📂 Dataset
-Dataset: [Spam Email Dataset](<https://www.kaggle.com/datasets/mfaisalqureshi/spam-email>)  
-Shape: 5572 rows × 2 columns
+- Source: [Spam Email Dataset](<https://www.kaggle.com/datasets/mfaisalqureshi/spam-email>)  
+- Size: ~5.5k messages  
+- Columns:  
+  - `category`: spam or ham  
+  - `message`: the raw text message  
 
-## 🔎 Insight & Findings
-- Found X% spam vs Y% ham imbalance.
-- Spam messages are typically shorter/longer and contain more promotional keywords.
-- Visualization showed distinct patterns between ham and spam word distributions.
+---
 
-## 🤖 AI Support Explanation
-IBM Granite was used to:
-- Replace manual pandas operations with natural language queries.
-- Automate visualization tasks (histograms, pie charts, WordCloud).
-- Assist in rebalancing dataset (undersampling).
+## 🔎 Analysis Process
+1. **Data Loading & Cleaning**  
+   - Removed duplicates and missing values.  
+   - Standardized column names.  
 
-## 📊 Example
-Example Granite prompt used:  
-`"Show the count of each label in the 'category' column."`
+2. **Exploratory Data Analysis (EDA)**  
+   - Distribution of spam vs ham.  
+   - Histogram of number of characters and words.  
+   - WordClouds for spam and ham messages.  
 
-## 📝 How to Run
-- Open the notebook in Google Colab.
-- Install dependencies
-- Mount Google Drive and run cells sequentially.
+3. **Balancing Dataset**  
+   - Undersampled majority class (ham) to match spam count.  
+
+4. **Modeling**  
+   - Deep learning model for classification.  
+   - Evaluation with accuracy and other metrics.  
+
+---
+
+## 📊 Insight & Findings
+- Dataset was imbalanced: ~87% ham vs 13% spam.  
+- Spam messages often contain promotional keywords, numbers, and shorter phrasing.  
+- WordClouds clearly differentiate the frequent terms used in spam vs ham.  
+- Balancing the dataset improved the model’s ability to detect spam messages.  
+
+images/pie_chart.png
+images/wordcloud_spam_img.png
+images/wordcloud_ham_img.png 
+
+---
+
+## 🤖 AI Support (IBM Granite)
+IBM Granite was integrated to:  
+- Query the dataset using prompts instead of coding (`"Show me the first 5 rows of the dataset"`).  
+- Visualize data (histograms, pie charts, wordclouds) through natural language instructions.  
+- Automate resampling for dataset balancing.  
+
+This reduced the coding effort and made the workflow faster and more intuitive.  
+
+---
+
+## 📝 Example Granite Prompts
+- `"Show the count of each label in the 'category' column."`  
+- `"Create a histogram that compares the distribution of 'num_words' for spam and ham."`  
+- `"Undersample the majority class so that the dataset is balanced and save it back into variable df."`  
+- `"Generate a WordCloud for spam messages using the 'transformed_text' column."`  
+
+---
+
+## 🚀 How to Run
+1. Open the notebook in Google Collab.  
+2. Mount Google Drive (if dataset is stored in Drive).  
+3. Run cells sequentially to reproduce the analysis.  
+4. Modify prompts to explore dataset with IBM Granite AI.  
+
+---
+
+## 📌 Project Info
+- Author: Muhammad Endrico 
+- Tools: Python, Scikit-learn, Seaborn, Matplotlib, WordCloud, IBM Granite AI  
+- Part of Hacktiv8 x IBM SkillsBuild Capstone Project  
